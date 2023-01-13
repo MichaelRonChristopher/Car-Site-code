@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Classifieds</title>
+  </head>
+  <body>
+    <h1>Car Classifieds</h1>
+
+    <div id="car-list"></div>
+
+    <script>
+      // Data for the classified ads
+      var cars = [
+        {
+          make: "Toyota",
+          model: "Camry",
+          year: 2020,
+          price: 25000
+        },
+        {
+          make: "Ford",
+          model: "Mustang",
+          year: 2019,
+          price: 35000
+        },
+        {
+          make: "Honda",
+          model: "Civic",
+          year: 2018,
+          price: 20000
+        }
+      ];
+
+      // Get the car-list element
+      var carList = document.getElementById("car-list");
+
+      // Create an HTML string for each car
+      var carHTML = "";
+      for (var i = 0; i < cars.length; i++) {
+        carHTML += `<div class="car-item">
+          <h2>${cars[i].year} ${cars[i].make} ${cars[i].model}</h2>
+          <p>Price: $${cars[i].price}</p>
+        </div>`;
+      }
+
+      // Add the HTML to the car-list element
+      carList.innerHTML = carHTML;
+
+    </script>
+  </body>
+</html>
